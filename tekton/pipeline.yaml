@@ -56,7 +56,6 @@ spec:
         - name: commitHash
           type: string
           description: The directory containing the build context.
-          default: latest
 
     - name: pull-request
       taskRef:
@@ -71,4 +70,3 @@ spec:
         - name: commitHash
           type: string
           description: The directory containing the build context.
-          default: latest
