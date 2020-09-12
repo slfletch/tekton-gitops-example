@@ -55,7 +55,6 @@ spec:
       params:
         - name: commitHash
           type: string
-          description: The directory containing the build context.
 
     - name: pull-request
       taskRef:
@@ -69,4 +68,3 @@ spec:
       params:
         - name: commitHash
           type: string
-          description: The directory containing the build context.
