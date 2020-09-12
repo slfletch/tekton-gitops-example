@@ -7,6 +7,7 @@ spec:
     - name: commitHash
       type: string
       description: The directory containing the build context.
+      default: latest
   resources:
     - name: repo
       type: git
@@ -54,7 +55,7 @@ spec:
             resource: repo
       params:
         - name: commitHash
-          type: string
+          value: $(params.commitHash)
 
     - name: pull-request
       taskRef:
@@ -67,4 +68,4 @@ spec:
             resource: repo
       params:
         - name: commitHash
-          type: string
+          value: $(params.commitHash)
