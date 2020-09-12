@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: deploy
+spec:
+  params:
+    - name: commitHash
+      type: string
+      description: The directory containing the build context.
+      default: latest
+  resources:
+    inputs:
+      - name: repo
+        type: git
+  steps:
+    - name: run-test
+      image: golang:1.14-alpine
+      workingDir: /workspace/repo/src
+      command: ["go"]
+      args: ["test"]
