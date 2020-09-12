@@ -3,6 +3,11 @@ kind: Task
 metadata:
   name: build-and-push
 spec:
+  params:
+    - name: commitHash
+      type: string
+      description: The directory containing the build context.
+      default: latest
   resources:
     inputs:
       - name: repo
@@ -17,4 +22,4 @@ spec:
         - /kaniko/executor
         - --dockerfile=Dockerfile
         - --context=/workspace/repo/src
-        - --destination=jenkinsxdemo/tekton-gitops-example:${git rev-parse --short HEAD}
+        - --destination=jenkinsxdemo/tekton-gitops-example:$(params.commitHash)
