@@ -26,17 +26,3 @@ spec:
         inputs:
           - name: repo
             resource: repo
-
-    # Deploy the latest docker image
-    - name: deploy
-      taskRef:
-        name: deploy
-      runAfter:
-        - build-and-push
-
-    # Create Pull Request
-    - name: pull-request
-      taskRef:
-        name: pull-request
-      runAfter:
-        - build-and-push
