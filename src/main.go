@@ -1,14 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+import "fmt"
+
+func sum(a, b int) int {
+	return a + b
+}
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
-	})
-
-	http.ListenAndServe(":80", nil)
+	fmt.Println("Sum:", sum(1,2))
 }
