@@ -1,12 +1,18 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: build-and-push
+  name: build-and-push-docker
 spec:
   params:
+    - name: organization
+      type: string
+      description: The organization for the Docker image
+    - name: repository
+      type: string
+      description: The repository for the Docker image
     - name: tag
       type: string
-      description: The tag for the Docker image (organization/repository tag)
+      description: The tag for the Docker image
       default: latest
   resources:
     inputs:
