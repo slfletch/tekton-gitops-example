@@ -6,4 +6,4 @@ spec:
   type: image
   params:
     - name: url
-      value: https://index.docker.io/v1/dannymassa/tekton-gitops-example:latest
+      value: https://index.docker.io/v1/jenkinsxdemo/tekton-gitops-example:latest
