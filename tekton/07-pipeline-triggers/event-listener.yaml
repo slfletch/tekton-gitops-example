@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: tekton-gitops-example-listener
+spec:
+  serviceAccountName: tekton-triggers-sa
+  triggers:
+    - binding:
+        name: tekton-gitops-example-pipelinebinding
+      template:
+        name: tekton-gitops-example-triggertemplate

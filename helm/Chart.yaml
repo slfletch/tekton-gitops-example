@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart tekton-gitops-example to be used for a Tekton deployment
+name: tekton-gitops-example
+version: 0.1.0

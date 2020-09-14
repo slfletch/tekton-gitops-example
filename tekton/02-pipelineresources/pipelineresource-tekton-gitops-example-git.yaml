@@ -1,11 +1,9 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
-  name: tekton-gitops-example
+  name: tekton-gitops-example-git
 spec:
   type: git
   params:
     - name: url
       value: https://github.com/DannyMassa/tekton-gitops-example
-    - name: revision
-      value: master
