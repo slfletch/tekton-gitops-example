@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: deploy-from-source-pipeline-
+spec:
+  pipelineRef:
+    name: deploy-from-source-pipeline
+  params:
+    - name: gitUrl
+      value: https://github.com/DannyMassa/tekton-gitops-example.git
+    - name: gitRevision
+      value: master
+    - name: pathToYamlFile
+      value: "kubernetes/tekton-gitops-example.yaml"
+    - name: imageUrl
+      value: "https://hub.docker.com/repository/docker/jenkinsxdemo/tekton-gitops-example"
+    - name: imageTag
+      value: "1.0"
+  serviceAccountName: build-bot
+  workspaces:
+    - name: git-source
+      persistentVolumeClaim:
+        claimName: tekton-gitops-example-source-pvc
