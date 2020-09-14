@@ -10,6 +10,8 @@ spec:
       value: https://github.com/DannyMassa/tekton-gitops-example.git
     - name: gitRevision
       value: master
+    - name: pathToContext
+      value: src
     - name: pathToYamlFile
       value: "kubernetes/tekton-gitops-example.yaml"
     - name: imageUrl
