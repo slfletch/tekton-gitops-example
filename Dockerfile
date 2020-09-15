@@ -4,6 +4,6 @@ WORKDIR /src
 COPY . .
 
 RUN go get -d -v ./...
-RUN go build -o app
+RUN go build -o app -v ./...
 
 CMD ["./app"]
