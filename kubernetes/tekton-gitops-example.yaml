@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tekton-gitops-example
+  name: tekton-gitops-example-node-port
   labels:
     app: tekton-gitops-example
 spec:
