@@ -16,6 +16,8 @@ spec:
       value: kubernetes/tekton-gitops-example.yaml
     - name: imageUrl
       value: jenkinsxdemo/tekton-gitops-example
+    - name: imageTag
+      value: latest
   serviceAccountName: build-bot
   workspaces:
     - name: git-source
