@@ -6,8 +6,16 @@ spec:
   pipelineRef:
     name: deploy-from-source-pipeline
   params:
+    - name: gitUrl
+      value: https://github.com/DannyMassa/tekton-gitops-example.git
+    - name: gitRevision
+      value: master
+    - name: pathToContext
+      value: src
+    - name: pathToYamlFile
+      value: kubernetes/tekton-gitops-example.yaml
     - name: imageUrl
-      value: https://index.docker.io/v1/jenkinsxdemo/tekton-gitops-example
+      value: jenkinsxdemo/tekton-gitops-example
   serviceAccountName: build-bot
   workspaces:
     - name: git-source
