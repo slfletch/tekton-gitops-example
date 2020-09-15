@@ -1,6 +1,6 @@
 FROM golang:1.14-alpine
 
-WORKDIR /
+WORKDIR /src
 
 RUN go get -d -v ./...
 RUN go install -v ./...
