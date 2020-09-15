@@ -1,6 +1,6 @@
 FROM golang:1.14-alpine
 
-WORKDIR /go/src/app
+WORKDIR /app
 COPY src .
 
 RUN go get -d -v ./...
